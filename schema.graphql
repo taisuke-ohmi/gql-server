@@ -1,0 +1,25 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+
+type Query {
+    billing(id: ID!): Billing
+}
+
+interface Billing {
+    id: ID!
+    senderName: String!
+}
+
+type MFKInvoice implements Billing {
+    id: ID!
+    senderName: String!
+    invoiceID: ID!
+}
+
+type MFKAccountTransferNotification implements Billing {
+    id: ID!
+    senderName: String!
+    accountTransferNotificationID: ID!
+}
